@@ -28,17 +28,10 @@ const App = () => {
     setPlayer(player);
 
     let boss = {
-      level: 1,
-      hp: 10,
-      get attack() {
-        return this.level * 10;
-      },
-      get power() {
-        return this.level;
-      },
-      get defense() {
-        return this.level * 10;
-      },
+      hp: 30,
+      attack: 12,
+      power: 2,
+      defense: 10,
     };
 
     setBoss(boss);
@@ -138,12 +131,12 @@ const App = () => {
     let newPlayer = {
       name: player.name,
       level: player.level + 1,
-      maxHp: player.maxHp + 1,
-      hp: player.maxHp + 1,
-      attack: player.attack + 1,
+      maxHp: player.maxHp + 5,
+      hp: player.maxHp + 5,
+      attack: player.attack + 2,
       power: player.power + 1,
-      defense: player.defense + 1,
-      potions: player.potions + 1,
+      defense: player.defense + 2,
+      potions: player.potions + 2,
     };
     chatBox.push("Player leveled up!");
     let newChat = [...chatBox];
@@ -169,17 +162,10 @@ const App = () => {
     switch (currentBoss) {
       case 1:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 30,
+          attack: 12,
+          power: 2,
+          defense: 10,
         };
 
         $(".boss")
@@ -198,17 +184,10 @@ const App = () => {
 
       case 2:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 35,
+          attack: 15,
+          power: 2,
+          defense: 12,
         };
 
         $(".boss")
@@ -226,17 +205,10 @@ const App = () => {
         break;
       case 3:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 50,
+          attack: 18,
+          power: 3,
+          defense: 12,
         };
 
         $(".boss")
@@ -255,17 +227,10 @@ const App = () => {
         break;
       case 4:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 50,
+          attack: 20,
+          power: 5,
+          defense: 15,
         };
 
         $(".boss")
@@ -283,17 +248,10 @@ const App = () => {
         break;
       case 5:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 55,
+          attack: 22,
+          power: 6,
+          defense: 16,
         };
 
         $(".boss")
@@ -311,17 +269,10 @@ const App = () => {
         break;
       case 6:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 60,
+          attack: 23,
+          power: 8,
+          defense: 18,
         };
 
         $(".boss")
@@ -339,17 +290,10 @@ const App = () => {
         break;
       case 7:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 70,
+          attack: 25,
+          power: 8,
+          defense: 20,
         };
 
         $(".boss")
@@ -367,17 +311,10 @@ const App = () => {
         break;
       case 8:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 75,
+          attack: 25,
+          power: 9,
+          defense: 20,
         };
 
         $(".boss")
@@ -395,17 +332,10 @@ const App = () => {
         break;
       case 9:
         newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+          hp: 90,
+          attack: 30,
+          power: 10,
+          defense: 20,
         };
 
         $(".boss")
@@ -422,18 +352,11 @@ const App = () => {
 
         break;
       case 10:
-        newBoss = {
-          level: 1,
-          hp: 10,
-          get attack() {
-            return this.level * 10;
-          },
-          get power() {
-            return this.level;
-          },
-          get defense() {
-            return this.level * 10;
-          },
+        newBoss = newBoss = {
+          hp: 100,
+          attack: 35,
+          power: 15,
+          defense: 30,
         };
 
         $(".boss")
@@ -459,21 +382,27 @@ const App = () => {
 
   //uses potion to heal player
   let usePotion = () => {
-    player.potions -= 1;
-    player.hp = player.maxHp;
-    let newPlayer = { ...player };
-    setPlayer(newPlayer);
+    if (player.potions > 0) {
+      player.potions -= 1;
+      player.hp = player.maxHp;
+      let newPlayer = { ...player };
+      setPlayer(newPlayer);
 
-    let bossAtt = Math.floor(Math.random() * boss.attack);
-    let playerDef = Math.floor(Math.random() * player.defense);
-    let bossPow = Math.floor(Math.random() * boss.power + 1);
+      let bossAtt = Math.floor(Math.random() * boss.attack);
+      let playerDef = Math.floor(Math.random() * player.defense);
+      let bossPow = Math.floor(Math.random() * boss.power + 1);
 
-    chatBox.push("You used a potion.");
-    let newChat = [...chatBox];
-    setChat(newChat);
+      chatBox.push("You used a potion.");
+      let newChat = [...chatBox];
+      setChat(newChat);
 
-    supportAction();
-    bossAttack(bossAtt, playerDef, bossPow);
+      supportAction();
+      bossAttack(bossAtt, playerDef, bossPow);
+    } else {
+      chatBox.push("You don't have any potions.");
+      let newChat = [...chatBox];
+      setChat(newChat);
+    }
   };
 
   //loads gif for support buff
@@ -489,7 +418,7 @@ const App = () => {
     if (supportAlive === true) {
       let sAction = Math.floor(Math.random() * 100);
 
-      if (sAction < 3) {
+      if (sAction < 1) {
         $(".support").css("content", "url(" + "../assets/bossAttack.gif" + ")");
         setTimeout(() => {
           $(".support").css("content", "url(" + "" + ")");
@@ -500,22 +429,25 @@ const App = () => {
           "url(" + "./assets/grave.png" + ")"
         );
         chatBox.push("Your support character died :( .");
-      } else if (sAction < 10) {
+      } else if (sAction < 4) {
         player.power += 1;
         supportbuff();
         chatBox.push("Your support character made you stronger!");
-      } else if (sAction < 15) {
+      } else if (sAction < 8) {
         player.attack += 1;
         supportbuff();
         chatBox.push("Your support character made you more accurate!");
-      } else if (sAction < 20) {
+      } else if (sAction < 13) {
         player.defense += 1;
         supportbuff();
         chatBox.push("Your support character increased your defense!");
-      } else if (sAction < 25) {
+      } else if (sAction < 17) {
         player.hp = player.maxHp;
         supportbuff();
         chatBox.push("Your support character healed you!");
+      } else if (sAction < 20) {
+        player.potions += 1;
+        chatBox.push("Your support character gave you a potion!");
       }
     } else {
       $(".support").css(
