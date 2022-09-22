@@ -11,6 +11,8 @@ JavaScript, React, React-DOM, Snowpack, PostgresSql, Express
 ### Bosses
 * Players can fight through 10 rounds of bosses to complete the game. 
 * Player gains a level after each round, increasing the player's combat stats.
+* Each boss features a new background to match their location fought in the offical Final Fantasy 9.
+* Small animation plays during a successful hit or when recieving buff from support character.
 ### User Interface
 * Buttons to save character in the database, load characters from the database, or restart. 
 * Players have options to either attack the boss or use a potion to heal during the fight. 
